@@ -1,0 +1,15 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: prometheus-sample-service
+  namespace: my-space
+spec:
+  host: prometheus-sample-service.apps.my-sample-host.com
+  path: /
+  to:
+    kind: Service
+    name: prometheus-sample-service
+  port:
+    targetPort: 9090
+  wildcardPolicy: None

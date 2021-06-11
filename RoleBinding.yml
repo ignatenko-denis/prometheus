@@ -1,0 +1,12 @@
+---
+apiVersion: authorization.openshift.io/v1
+kind: RoleBinding
+metadata:
+  name: prometheus
+  namespace: my-space
+roleRef:
+  name: prometheus
+subjects:
+  - kind: ServiceAccount
+name: prometheus
+namespace: my-space
